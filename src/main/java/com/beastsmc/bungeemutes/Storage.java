@@ -66,7 +66,8 @@ public class Storage {
         ) {
             ps.setString(1, record.getMutedUUID());
             ps.setString(2, record.getMuterName());
-            ps.setTimestamp(3, new Timestamp(record.getExpiration().getTime()));
+            Timestamp expiration = (record.isPermanent()) ? null : new Timestamp(record.getExpiration().getTime());
+            ps.setTimestamp(3, expiration);
             ps.setString(4, record.getReason());
             ps.executeUpdate();
         } catch (SQLException e) {
