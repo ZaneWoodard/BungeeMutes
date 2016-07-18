@@ -1,0 +1,20 @@
+name: BungeeMutes
+main: com.beastsmc.bungeemutes.BungeeMutes
+version: 0.2a
+database: true
+commands:
+   mute:
+      description: Mute a player across all servers
+      usage: /mute [username] <[time][s/m/h/d]> <reason> (<> optional, default=60m)
+      permission: bungeemutes.mute
+      permission-message: You don't have permission to do that.
+   banchat:
+      description: Mute a player FOREVER across all servers
+      usage: /banchat [username]
+      permission: bungeemutes.banchat
+      permission-message: You don't have permission to do that.
+   unmute:
+      description: Unmute a player across all servers
+      usage: /unmute [username]
+      permission: bungeemutes.mute
+      permission-message: You don't have permission to do that.
